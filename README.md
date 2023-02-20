@@ -1,18 +1,12 @@
 # Medibank Coding Challenge
 ### Name: Niousha Dastan
 
-## Note: I will use python in this project.
+### Note: I will use python in this project.
 
-
-## Overview
-Sort through a list of files in a folder structure
-- Write a script to search through a directory (and subdirectories) of files.
-- Output the list of unique strings with descending order of occurrences next to them
-- Only strings with more than 2 occurrences should be reported
 
 
 ## Requirements
- I am going to:
+ ### Sort through a list of files in a folder structure:
  - Write a script to search through a directory (and subdirectories) of files.
  - Output the list of unique strings with descending order of occurrences next to them
  - Only strings with more than 2 occurrences should be reported
@@ -21,7 +15,7 @@ Sort through a list of files in a folder structure
 
 ## Project description:
 
--Below program, should go through all the folders/subdirectories and fetch all the existing file names. So I create a recursive function to call itself over and over to reach the last root of each directory. During this process, I assumed those items with "." are files, like: .text, .pdf,... and others are folders. But to consider those files without ".", I use try / except block. It means that if it has no "." but still is a file name, it face **NoSuchDirectory alarm**, so goes to except and add it as file name and continue.
+Below program, should go through all the folders/subdirectories and fetch all the existing file names. So I create a recursive function to call itself over and over to reach the last root of each directory. During this process, I assumed those items with "." are files, like: .text, .pdf,... and others are folders. But to consider those files without ".", I use try / except block. It means that if it has no "." but still is a file name, it face **NoSuchDirectory alarm**, so goes to except and add it as file name and continue.
  
 So it start with the main given path, via using the **os libraries** it gets list of the directories and save it in a list. Then I apply a **recursive function** on each of the item. This function first checks if it is a file or a folder. If it is a file it adds its name to a list of file names, else it will **change directory to this sub directory through os library** and recursively do the same for each element. 
 
