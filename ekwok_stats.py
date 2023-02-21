@@ -4,12 +4,8 @@ To Run      : python3 ekwok_stats.py [dirname]
 Author      : Eddy Kwok
 Version     : 0.0.1
 
-Input       : directory name (could be absolute or relative)
-Process     : check README.md
-Output      : check README.md
-
 Notes:
-For the sake of simplicity, i ommit the use of logging
+For the sake of simplicity, logging functionality is omitted
 
 """
 
