@@ -2,21 +2,18 @@
 Name        : ekwok_stats.py
 To Run      : python3 ekwok_stats.py [dirname]
 Author      : Eddy Kwok
-Version     : 0.0.1
-
-Notes:
-For the sake of simplicity, logging functionality is omitted
-
 """
 
 import os
 import sys
 import glob
 import json
-
+import logging
 
 MIN_COUNT = 3       # minimum count qualify for print
 DEFAULT_DIR = "."   # default folder
+
+logging.basicConfig(level=logging.DEBUG)  # Logging Level: INFO, DEBUG, ...
 
 
 def getFilenames(dirname):
@@ -34,7 +31,9 @@ def getFilenames(dirname):
                 except:  # key not existed
                     dic_filenames[filename] = 1
     except Exception as e:
-        print("getFilenames exception: ", e)
+        logging.error(e)
+
+    logging.debug("getFilenames >> dic_filenames: {}".format(dic_filenames))
     return dic_filenames
 
 
@@ -53,7 +52,8 @@ def getCounters(dic_filenames):
         # convert to json to sort then convert back to dict
         dic_counters = json.loads(json.dumps(dic_counters, sort_keys=True))
     except Exception as e:
-        print("getCounters exception: ", e)
+        logging.error(e)
+    logging.debug("getCounters >> dic_counters: {}".format(dic_counters))
     return dic_counters
 
 
@@ -73,7 +73,7 @@ def main():
                 print(filename, count)
 
     except Exception as e:
-        print("main exception: ", e)
+        logging.error(e)
 
 
 if __name__ == "__main__":
