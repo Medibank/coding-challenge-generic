@@ -13,7 +13,7 @@ import logging
 MIN_COUNT = 3       # minimum count qualify for print
 DEFAULT_DIR = "."   # default folder
 
-logging.basicConfig(level=logging.DEBUG)  # Logging Level: INFO, DEBUG, ...
+logging.basicConfig(level=logging.INFO)  # Logging Level: INFO, DEBUG, ...
 
 
 def getFilenames(dirname):
