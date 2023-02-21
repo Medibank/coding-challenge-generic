@@ -41,8 +41,8 @@ def getFilenames(dirname):
 def getCounters(dic_filenames):
     # Create Counter Dict with counter as key, with value: concatenated filenames, sort key asc
     # format: { 1:"filename1,filename2",... }
+    dic_counters = {}
     try:
-        dic_counters = {}
         for filename, count in dic_filenames.items():
             if count >= MIN_COUNT:
                 try:
@@ -51,10 +51,10 @@ def getCounters(dic_filenames):
                     dic_counters[count] = filename
 
         # convert to json to sort then convert back to dict
-        result = json.loads(json.dumps(dic_counters, sort_keys=True))
+        dic_counters = json.loads(json.dumps(dic_counters, sort_keys=True))
     except Exception as e:
         print("getCounters exception: ", e)
-    return result
+    return dic_counters
 
 
 def main():
